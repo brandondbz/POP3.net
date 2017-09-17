@@ -253,7 +253,7 @@ Namespace POP3
             'Gets a message.
             Dim LN = SRead.ReadLine()
             If LN Like "*+OK*" Then
-                Dim b = New Text.StringBuilder
+                Dim b = New System.Text.StringBuilder
                 LN = SRead.ReadLine
                 'read all lines untill we reach the end.
                 While (LN <> ".")
@@ -345,7 +345,7 @@ Namespace POP3
             'Gets a message.
             Dim LN = SRead.ReadLine()
             If LN Like "*+OK*" Then
-                Dim b = New Text.StringBuilder
+                Dim b = New System.Text.StringBuilder
                 LN = SRead.ReadLine
                 'read all lines untill we reach the end.
                 While (LN <> ".")
