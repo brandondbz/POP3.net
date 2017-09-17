@@ -256,7 +256,7 @@ Namespace POP3
             End If
         End Function
         Private Function QPS(ByVal inp As String) As String
-            Dim X As IO.StringReader = New IO.StringReader(inp), Y As Text.StringBuilder = New Text.StringBuilder
+            Dim X As IO.StringReader = New IO.StringReader(inp), Y As System.Text.StringBuilder = New System.Text.StringBuilder
             Dim Z = X.Peek
 
             While X.Peek >= 0
@@ -350,12 +350,12 @@ Namespace POP3
                 If LCase(CTE) Like "*base64*" Then
                     B = Convert.FromBase64String(src)
                 ElseIf LCase(CTE) Like "*quoted-printable*" Then
-                    B = Text.Encoding.UTF8.GetBytes(QPS(src))
+                    B = System.Text.Encoding.UTF8.GetBytes(QPS(src))
                 Else
-                    B = Text.Encoding.UTF8.GetBytes((src))
+                    B = System.Text.Encoding.UTF8.GetBytes((src))
                 End If
             Else
-                B = Text.Encoding.UTF8.GetBytes((src))
+                B = System.Text.Encoding.UTF8.GetBytes((src))
             End If
             bcont.content = B
             bcont.headers = hdr
